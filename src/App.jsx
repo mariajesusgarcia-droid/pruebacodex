@@ -11,8 +11,8 @@ const examples = [
 
 const storybookLinks = [
   {
-    href: 'https://pruebastorybook.vercel.app/?path=/story/components-button-playground--interactive',
-    label: 'Abrir Storybook',
+    href: 'http://127.0.0.1:9010/?path=/story/components-button-playground--interactive',
+    label: 'Abrir Storybook local',
     kind: 'primary',
   },
   {
