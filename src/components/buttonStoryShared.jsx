@@ -1,12 +1,12 @@
 import Button from './Button'
 
-const variants = ['contained', 'outlined', 'text']
-const colors = ['primary', 'secondary', 'tertiary']
-const sizes = ['large', 'medium', 'small']
-const states = ['resting', 'hover', 'disabled']
-const icons = ['none', 'left', 'right']
+export const variants = ['contained', 'outlined', 'text']
+export const colors = ['primary', 'secondary', 'tertiary']
+export const sizes = ['large', 'medium', 'small']
+export const states = ['resting', 'hover', 'disabled']
+export const icons = ['none', 'left', 'right']
 
-const darkThemeVars = {
+export const darkThemeVars = {
   '--button-primary-main': '#1ca58a',
   '--button-primary-dark': '#118d75',
   '--button-primary-contrast': '#000000',
@@ -23,7 +23,39 @@ const darkThemeVars = {
   '--button-action-disabled-bg': 'rgba(255, 255, 255, 0.05)',
 }
 
-function MatrixStory({ theme = 'light', ...args }) {
+export const buttonArgTypes = {
+  variant: {
+    control: 'inline-radio',
+    options: variants,
+  },
+  color: {
+    control: 'inline-radio',
+    options: colors,
+  },
+  size: {
+    control: 'inline-radio',
+    options: sizes,
+  },
+  state: {
+    control: 'inline-radio',
+    options: states,
+  },
+  icon: {
+    control: 'inline-radio',
+    options: icons,
+  },
+}
+
+export const buttonArgs = {
+  label: 'Button',
+  variant: 'contained',
+  color: 'primary',
+  size: 'large',
+  state: 'resting',
+  icon: 'none',
+}
+
+export function ButtonMatrixStory({ theme = 'light', ...args }) {
   return (
     <div
       className={`button-story-grid button-story-grid--${theme}`}
@@ -68,74 +100,4 @@ function MatrixStory({ theme = 'light', ...args }) {
       ))}
     </div>
   )
-}
-
-const meta = {
-  title: 'Components/Button',
-  component: Button,
-  parameters: {
-    layout: 'fullscreen',
-  },
-  args: {
-    label: 'Button',
-    variant: 'contained',
-    color: 'primary',
-    size: 'large',
-    state: 'resting',
-    icon: 'none',
-  },
-  argTypes: {
-    variant: {
-      control: 'inline-radio',
-      options: variants,
-    },
-    color: {
-      control: 'inline-radio',
-      options: colors,
-    },
-    size: {
-      control: 'inline-radio',
-      options: sizes,
-    },
-    state: {
-      control: 'inline-radio',
-      options: states,
-    },
-    icon: {
-      control: 'inline-radio',
-      options: icons,
-    },
-  },
-}
-
-export default meta
-
-export const Playground = {}
-
-export const Gallery = {
-  render: (args) => <MatrixStory {...args} />,
-  parameters: {
-    docs: {
-      description: {
-        story:
-          'Galeria completa inspirada en el nodo de Figma, organizada por variante, icono y tamano.',
-      },
-    },
-  },
-}
-
-export const DarkGallery = {
-  render: (args) => <MatrixStory {...args} theme="dark" />,
-  parameters: {
-    layout: 'fullscreen',
-    backgrounds: {
-      default: 'ink',
-    },
-    docs: {
-      description: {
-        story:
-          'Version oscura del mismo sistema de botones, ajustada al nodo 10372:19143 de Figma.',
-      },
-    },
-  },
 }
