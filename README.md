@@ -1,26 +1,34 @@
 # pruebacodex
 
-Repositorio base preparado para empezar a desarrollar con Codex.
+Proyecto React preparado para empezar a desarrollar con Codex.
 
-## Estructura inicial
+## Stack
+
+- React
+- Vite
+- JavaScript
+
+## Scripts
+
+- `npm install`: instala las dependencias.
+- `npm run dev`: arranca el servidor de desarrollo.
+- `npm run build`: genera la version de produccion.
+- `npm run preview`: sirve la build localmente.
+
+## Estructura
 
 ```text
 .
 |-- assets/
 |-- docs/
+|-- public/
 |-- src/
+|   |-- App.jsx
+|   |-- main.jsx
+|   `-- styles.css
 `-- tests/
 ```
 
-## Carpetas
+## Proximo paso
 
-- `src/`: codigo fuente principal del proyecto.
-- `tests/`: pruebas automatizadas.
-- `docs/`: notas funcionales, decisiones tecnicas y documentacion.
-- `assets/`: imagenes, recursos estaticos y material de apoyo.
-
-## Siguientes pasos
-
-1. Elegir el stack del proyecto.
-2. Crear la configuracion base del entorno.
-3. Empezar la primera funcionalidad dentro de `src/`.
+Empieza a editar `src/App.jsx` para construir la primera pantalla.
