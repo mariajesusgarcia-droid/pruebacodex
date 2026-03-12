@@ -9,6 +9,24 @@ const examples = [
   { variant: 'text', color: 'tertiary', size: 'small', icon: 'left' },
 ]
 
+const storybookLinks = [
+  {
+    href: 'https://pruebastorybook.vercel.app/?path=/story/components-button-playground--interactive',
+    label: 'Abrir Storybook',
+    kind: 'primary',
+  },
+  {
+    href: 'https://pruebastorybook.vercel.app/?path=/story/components-button-light--gallery',
+    label: 'Ver Light',
+    kind: 'secondary',
+  },
+  {
+    href: 'https://pruebastorybook.vercel.app/?path=/story/components-button-dark--gallery',
+    label: 'Ver Dark',
+    kind: 'secondary',
+  },
+]
+
 export default function App() {
   return (
     <main className="app-shell">
@@ -20,6 +38,19 @@ export default function App() {
           colores, tamanos, estados e iconos reutilizables desde un solo
           componente.
         </p>
+        <div className="storybook-links">
+          {storybookLinks.map((link) => (
+            <a
+              key={link.href}
+              className={`storybook-link storybook-link--${link.kind}`}
+              href={link.href}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
         <div className="button-showcase">
           {examples.map((example) => (
             <Button
