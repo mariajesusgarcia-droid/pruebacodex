@@ -1,0 +1,86 @@
+:root {
+  --button-primary-main: #1ca58a;
+  --button-primary-dark: #118d75;
+  --button-primary-contrast: #ffffff;
+  --button-primary-hover-bg: rgba(28, 165, 138, 0.08);
+  --button-secondary-main: #e73a78;
+  --button-secondary-contrast: #ffffff;
+  --button-secondary-hover-bg: rgba(231, 58, 120, 0.08);
+  --button-secondary-contained-hover: #a22954;
+  --button-text-primary: #111827;
+  --button-text-disabled: rgba(55, 65, 81, 0.48);
+  --button-outlined-border: #d1d5db;
+  --button-action-hover: rgba(55, 65, 81, 0.04);
+  --button-action-selected: rgba(55, 65, 81, 0.08);
+  --button-action-disabled-bg: rgba(55, 65, 81, 0.12);
+}
+
+.button {
+  appearance: none;
+  border: 1px solid var(--button-border);
+  border-radius: 8px;
+  background: var(--button-bg);
+  color: var(--button-fg);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--button-padding-block) var(--button-padding-inline);
+  font-family: Inter, "Avenir Next", "Segoe UI", sans-serif;
+  font-size: var(--button-font-size);
+  font-style: normal;
+  font-weight: 600;
+  line-height: var(--button-line-height);
+  letter-spacing: 0;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.button:focus-visible {
+  outline: 3px solid rgba(28, 165, 138, 0.22);
+  outline-offset: 2px;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.button--text {
+  padding-inline: calc(var(--button-padding-inline) - 8px);
+}
+
+.button__content {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.button__label {
+  display: inline-flex;
+  align-items: center;
+}
+
+.button__icon {
+  width: var(--button-icon-box);
+  height: var(--button-icon-box);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.button__icon-svg {
+  display: block;
+}

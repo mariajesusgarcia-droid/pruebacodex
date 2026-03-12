@@ -1,20 +1,34 @@
+import Button from './components/Button'
+
+const examples = [
+  { variant: 'contained', color: 'primary', size: 'large', icon: 'none' },
+  { variant: 'contained', color: 'secondary', size: 'large', icon: 'right' },
+  { variant: 'outlined', color: 'primary', size: 'medium', icon: 'left' },
+  { variant: 'outlined', color: 'tertiary', size: 'medium', icon: 'none' },
+  { variant: 'text', color: 'secondary', size: 'small', icon: 'right' },
+  { variant: 'text', color: 'tertiary', size: 'small', icon: 'left' },
+]
+
 export default function App() {
   return (
     <main className="app-shell">
-      <section className="hero">
-        <p className="eyebrow">React + Vite</p>
-        <h1>Base lista para empezar a construir.</h1>
+      <section className="hero hero--system">
+        <p className="eyebrow">MKP v5.0 button system</p>
+        <h1>Botones listos para Storybook.</h1>
         <p className="lead">
-          El proyecto ya tiene estructura, estilos iniciales y punto de entrada
-          preparado para que avancemos sobre una primera funcionalidad real.
+          La implementacion sigue la matriz del nodo de Figma con variantes,
+          colores, tamanos, estados e iconos reutilizables desde un solo
+          componente.
         </p>
-        <div className="actions">
-          <a href="https://react.dev" target="_blank" rel="noreferrer">
-            Documentacion React
-          </a>
-          <a href="https://vite.dev" target="_blank" rel="noreferrer">
-            Documentacion Vite
-          </a>
+        <div className="button-showcase">
+          {examples.map((example) => (
+            <Button
+              key={JSON.stringify(example)}
+              {...example}
+              label="Button"
+              state="resting"
+            />
+          ))}
         </div>
       </section>
     </main>
