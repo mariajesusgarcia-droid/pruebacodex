@@ -6,9 +6,29 @@ const sizes = ['large', 'medium', 'small']
 const states = ['resting', 'hover', 'disabled']
 const icons = ['none', 'left', 'right']
 
-function MatrixStory(args) {
+const darkThemeVars = {
+  '--button-primary-main': '#1ca58a',
+  '--button-primary-dark': '#118d75',
+  '--button-primary-contrast': '#000000',
+  '--button-primary-hover-bg': 'rgba(28, 165, 138, 0.08)',
+  '--button-secondary-main': '#e73a78',
+  '--button-secondary-contrast': '#000000',
+  '--button-secondary-hover-bg': 'rgba(231, 58, 120, 0.08)',
+  '--button-secondary-contained-hover': '#a22954',
+  '--button-text-primary': '#f0f4f8',
+  '--button-text-disabled': 'rgba(85, 94, 104, 0.48)',
+  '--button-outlined-border': '#32383e',
+  '--button-action-hover': 'rgba(255, 255, 255, 0.08)',
+  '--button-action-selected': 'rgba(255, 255, 255, 0.16)',
+  '--button-action-disabled-bg': 'rgba(255, 255, 255, 0.05)',
+}
+
+function MatrixStory({ theme = 'light', ...args }) {
   return (
-    <div className="button-story-grid">
+    <div
+      className={`button-story-grid button-story-grid--${theme}`}
+      style={theme === 'dark' ? darkThemeVars : undefined}
+    >
       {variants.map((variant) => (
         <section key={variant} className="button-story-section">
           <header>
@@ -99,6 +119,22 @@ export const Gallery = {
       description: {
         story:
           'Galeria completa inspirada en el nodo de Figma, organizada por variante, icono y tamano.',
+      },
+    },
+  },
+}
+
+export const DarkGallery = {
+  render: (args) => <MatrixStory {...args} theme="dark" />,
+  parameters: {
+    layout: 'fullscreen',
+    backgrounds: {
+      default: 'ink',
+    },
+    docs: {
+      description: {
+        story:
+          'Version oscura del mismo sistema de botones, ajustada al nodo 10372:19143 de Figma.',
       },
     },
   },
